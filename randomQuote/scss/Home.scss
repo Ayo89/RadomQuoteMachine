@@ -1,0 +1,108 @@
+$colores: (
+  "red": rgb(184, 46, 12),
+  "green": rgb(43, 146, 43),
+);
+
+@mixin shareBackground {
+  @each $key, $color in $colores {
+    &.color-#{$key} {
+      background-color: $color;
+    }
+  }
+}
+
+span{
+  font-weight: 300;
+}
+
+#text {
+  display: flex;
+  font-size: 20px;
+  text-justify: justify;
+}
+
+.fa-quote-left {
+  display: inline;
+  font-size: 24px;
+  margin-right: 24px;
+}
+
+h2 {
+  margin: 0;
+  margin-top: 44px;
+  font-size: 20px;
+  
+}
+
+#container {
+  @include shareBackground;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  place-items: center;
+}
+
+#quote-box {
+  display: grid;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
+
+#author {
+  text-align: end;
+}
+
+#footer-quote {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+#footer-quote {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+#new-quote {
+  position: relative;
+  @include shareBackground;
+  border-radius: 4px;
+  border: none;
+  width: 110px;
+  height: 50px;
+  color: black;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+
+#new-quote::before {
+  content: ""; // Necesario para que el pseudo-elemento se muestre
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit; // Hereda el color de fondo de #new-quote
+  z-index: -1; // Se asegura de que el pseudo-elemento esté detrás del contenido
+  transition: opacity 0.3s, transform 0.3s; // Transición suave para la opacidad y transformación
+  border-radius: inherit; // Hereda el border-radius de #new-quote
+}
+
+#new-quote:hover::before {
+  opacity: 0.9; // Reduce la opacidad al hacer hover
+  transform: scale(
+    1.1
+  ); // Hace que el fondo se vea ligeramente más grande al hacer hover
+}
