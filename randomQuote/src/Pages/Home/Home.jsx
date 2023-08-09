@@ -38,7 +38,8 @@ function Home() {
               </span>
 
               <h2 key={index} id="author">
-                <span>By</span>{"  "} {item.author}
+                <span>By</span>
+                {"  "} {item.author}
               </h2>
             </>
           );
@@ -46,9 +47,8 @@ function Home() {
 
         <div id="footer-quote">
           <a id="tweet-quote" href="#">
-            <div
-              style={{ width: "20px", height: "20px", background: "magenta" }}
-            ></div>
+              {" "}
+              <i className="fab fa-github"></i>
           </a>
           <button
             className={colors[currentColorIndex]}
