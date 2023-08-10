@@ -11,7 +11,7 @@ export const getQuoteService = async () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "3bbe34c22amsh8e0d441c8b40e5dp137582jsne3af38d7faca",
+            import.meta.env.VITE_RAPID_KEY,
           "X-RapidAPI-Host": "andruxnet-random-famous-quotes.p.rapidapi.com",
         },
       }
