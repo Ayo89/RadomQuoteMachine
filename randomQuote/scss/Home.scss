@@ -1,6 +1,10 @@
 $colores: (
   "red": rgb(184, 46, 12),
   "green": rgb(43, 146, 43),
+  "pink": #ea27f1c0,
+  "orange":#F18527,
+  "purple": #8527F1,
+  "blue": #2792F1
 );
 
 @mixin shareBackground {
@@ -29,7 +33,8 @@ span{
 
 .fab,
 .far{
-  font-size: 24px;
+  font-size: 28px;
+  color: black;
 }
 
 h2 {

@@ -4,7 +4,7 @@ import { getQuoteService } from '../../service/andruxnet';
 
 
 function Home() {
-  const colors = ["color-red", "color-green", "color-blue"];
+  const colors = ["color-red", "color-green", "color-blue", "color-pink", "color-orange", "color-purple"];
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [quotes, setQuotes] = useState([])
 
@@ -46,9 +46,13 @@ function Home() {
         })}
 
         <div id="footer-quote">
-          <a id="tweet-quote" href="#">
-              {" "}
-              <i className="fab fa-github"></i>
+          <a
+            target="_blank"
+            id="tweet-quote"
+            href="https://github.com/Ayo89/RadomQuoteMachine"
+          >
+            {" "}
+            <i className="fab fa-github"></i>
           </a>
           <button
             className={colors[currentColorIndex]}
